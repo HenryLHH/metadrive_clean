@@ -1,5 +1,0 @@
-task: "SafetyAntCircle-v0"
-epoch: 1500
-hidden_sizes: [256, 256]
-lr: 0.001
-max_grad_norm: 10
