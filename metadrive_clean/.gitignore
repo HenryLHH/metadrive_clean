@@ -2,10 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-metadrive_dataset/*
-*.png
-*.hdf5
-*.pt
 
 # C extensions
 *.so
