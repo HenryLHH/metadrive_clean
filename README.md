@@ -8,12 +8,11 @@ where {Road} includes three different levels for self-driving cars: easy, medium
 ```
 # set up metadrive
 git clone --recursive https://github.com/HenryLHH/metadrive_clean.git
-cd metadrive_clean
+cd metadrive_clean/metadrive_clean
 pip3 install -e .
 
-# set up fsrl_metadrive
-git clone https://github.com/HenryLHH/fsrl_metadrive.git
-cd fsrl_metadrive/
+# set up data collector
+cd ../
 pip3 install -e .
 ```
 
