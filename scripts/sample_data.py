@@ -5,8 +5,8 @@ from matplotlib import pyplot as plt
 import argparse
 from tianshou.data import Batch, ReplayBuffer, to_numpy
 from fsrl.data.traj_buf import TrajectoryBuffer
-from fsrl_metadrive import safe_metadrive_environment_dict
-from fsrl_metadrive.policy.idm_policy import IDMPolicy_CustomSpeed
+from metadrive.fsrl_metadrive import safe_metadrive_environment_dict
+from metadrive.fsrl_metadrive.policy.idm_policy import IDMPolicy_CustomSpeed
 
 
 def get_parser(): 

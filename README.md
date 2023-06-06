@@ -20,7 +20,7 @@ pip3 install -e .
 
 ```
 import gym
-import fsrl_metadrive
+import metadrive.fsrl_metadrive
 
 env = gym.make("SafeMetaDrive-easysparse-v0")
 ```

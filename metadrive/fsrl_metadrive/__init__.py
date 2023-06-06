@@ -1,0 +1,2 @@
+import metadrive.fsrl_metadrive.register
+from metadrive.fsrl_metadrive.register import safe_metadrive_environment_dict
