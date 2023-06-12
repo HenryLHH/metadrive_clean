@@ -190,7 +190,6 @@ class MetaDriveEnv(BaseEnv):
             done = True
             done_info[TerminationState.MAX_STEP] = True
             logging.info("Episode ended! Reason: max step ")
-
         # for compatibility
         # crash almost equals to crashing with vehicles
         done_info[TerminationState.CRASH] = (

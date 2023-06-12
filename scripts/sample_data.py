@@ -39,20 +39,20 @@ def sample_traj(traj_buffer, env_name, speed, acc, env_num=1, ep_num=100):
     rew, cost = 0, 0
     count_ep = 0
     default_config = safe_metadrive_environment_dict[env_name]
+    
     default_config.update({"idm_target_speed": speed, 
                            "idm_acc_factor": acc, 
                            "environment_num": env_num, 
-                            "agent_policy": IDMPolicy_CustomSpeed
+                            "agent_policy": IDMPolicy_CustomSpeed,
                             })
     
     env = gym.make(env_name, config=default_config)
-    obs = env.reset()
+    obs = env.reset()        
     data.update(obs=[obs])
 
     pbar = tqdm(total=ep_num)
     while True: 
-        act = np.random.rand(2,)
-        obs_next, r, terminated, truncated, info = env.step(act)
+        obs_next, r, terminated, truncated, info = env.step(env.action_space.sample())
         done = np.logical_or(terminated, truncated)        
         rew += r
         cost += info["cost"]
@@ -88,9 +88,7 @@ def sample_traj(traj_buffer, env_name, speed, acc, env_num=1, ep_num=100):
         
         traj_buffer.store(traj_data)
         data.obs = data.obs_next
-
-        
-        # print(i["velocity"])
+                
         if done: 
             obs = env.reset()
             data.update(obs=[obs])

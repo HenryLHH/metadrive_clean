@@ -11,10 +11,6 @@ safe_metadrive_environment_dict = {
         "accident_prob": 0.0,
         "environment_num": 1, 
         "horizon": 1000,
-        # "agent_policy": IDMPolicy_CustomSpeed,
-        # "idm_target_speed": 30,
-        # "idm_acc_factor": 1.0,
-        # "idm_deacc_factor": 5.0,
     }, 
     "SafeMetaDrive-mediumsparse-v0": {
         "start_seed": 100, 
@@ -59,6 +55,7 @@ safe_metadrive_environment_dict = {
         "map_config": {"type": "block_sequence", "config": "TRO"}, 
         "accident_prob": 0.0,
         "environment_num": 1,
+        "horizon": 1000,
     }, 
     "SafeMetaDrive-easydense-v0": {
         "start_seed": 0, 

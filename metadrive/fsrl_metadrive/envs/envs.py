@@ -21,6 +21,14 @@ class SafeMetaDriveEnv_FSRL(SafeMetaDriveEnv):
         return config
 
 
+    def done_function(self, vehicle_id: str):
+        done, done_info = super(SafeMetaDriveEnv_FSRL, self).done_function(vehicle_id)
+        
+        if done_info[TerminationState.MAX_STEP]:
+            done = True
+        
+        return done, done_info
+
     def step(self, actions):
         o, r, d, i = super(SafeMetaDriveEnv_FSRL, self).step(actions)
         i["velocity_cost"] = max(0, 1e-2*(i["velocity"]-10.))
